@@ -35,7 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## setup complete
+## setup next js complete
 
 ## authentication complete
 
@@ -43,4 +43,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Add Form from shadcnui complete
 
-## Setup database
+## Setup database, axios and toast complete
+
+## Create dashboard
