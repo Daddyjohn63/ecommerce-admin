@@ -45,4 +45,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Setup database, axios and toast complete
 
-## Create dashboard
+## Create dashboard Setup complete
+
+## Navigation bar

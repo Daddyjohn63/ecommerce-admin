@@ -41,7 +41,8 @@ export const StoreModal = () => {
       setLoading(true);
       //throw new Error('x');   just testing error response form toast
       const response = await axios.post('/api/stores', values);
-      toast.success('Store was created');
+
+      window.location.assign(`/${response.data.id}`); //use instead of next router, because this will mean the page will get refreshed and we will then know that the db has been created.
     } catch (error) {
       toast.error('something went wrong');
     } finally {
