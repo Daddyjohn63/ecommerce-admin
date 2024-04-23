@@ -89,7 +89,7 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
           <CommandSeparator />
           <CommandList>
             <CommandGroup>
-              <CommandItem
+              {/* <CommandItem
                 onSelect={() => {
                   setOpen(false);
                   storeModal.onOpen();
@@ -97,7 +97,19 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
               >
                 <PlusCircle className="mr-2 h-5 w-5" />
                 Create Store
-              </CommandItem>
+              </CommandItem> */}
+
+              <Button
+                className="w-[200px] p-0 pl-1 justify-start"
+                variant="outline"
+                onClick={() => {
+                  setOpen(false);
+                  storeModal.onOpen();
+                }}
+              >
+                <PlusCircle className="mr-2 h-5 w-5" />
+                Create Store
+              </Button>
             </CommandGroup>
           </CommandList>
         </Command>
