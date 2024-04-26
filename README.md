@@ -47,4 +47,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Create dashboard Setup complete
 
-## Navigation bar
+## Navigation bar Setup complete
+
+## Settings Page 3:15:31...

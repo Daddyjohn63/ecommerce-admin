@@ -24,7 +24,7 @@ export const Modal: React.FC<ModalProps> = ({
   children
 }) => {
   const onChange = (open: boolean) => {
-    //will except trure or false and if false, then we trigger onClose()
+    //will except true or false and if false, then we trigger onClose()
     if (!open) {
       onClose();
     }

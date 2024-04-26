@@ -28,6 +28,7 @@ interface StoreSwitcherProps extends PopoverTriggerProps {
 }
 
 export default function StoreSwitcher({ className, items = [] }: StoreSwitcherProps) {
+  //console.log('store switcher props', items);
   const storeModal = useStoreModal();
   const params = useParams();
   const router = useRouter();
@@ -38,6 +39,7 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
   }));
 
   const currentStore = formattedItems.find(item => item.value === params.storeId);
+  //console.log('current store', currentStore);
 
   const [open, setOpen] = useState(false);
 
@@ -89,7 +91,7 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
           <CommandSeparator />
           <CommandList>
             <CommandGroup>
-              {/* <CommandItem
+              <CommandItem
                 onSelect={() => {
                   setOpen(false);
                   storeModal.onOpen();
@@ -97,9 +99,9 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
               >
                 <PlusCircle className="mr-2 h-5 w-5" />
                 Create Store
-              </CommandItem> */}
+              </CommandItem>
 
-              <Button
+              {/* <Button
                 className="w-[200px] p-0 pl-1 justify-start"
                 variant="outline"
                 onClick={() => {
@@ -109,7 +111,7 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
               >
                 <PlusCircle className="mr-2 h-5 w-5" />
                 Create Store
-              </Button>
+              </Button> */}
             </CommandGroup>
           </CommandList>
         </Command>
