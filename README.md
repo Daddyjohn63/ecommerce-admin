@@ -52,3 +52,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Settings Page complete
 
 ## Billboards entity 4:28:25
+
+## Billboards Table 5:07:08
