@@ -4,7 +4,7 @@ import prismadb from '@/lib/prismadb';
 import { BillboardClient } from './components/client';
 import { BillboardColumn } from './components/columns';
 
-//export const revalidate = 0;
+export const revalidate = 3;
 
 const BillboardsPage = async ({ params }: { params: { storeId: string } }) => {
   const billboards = await prismadb.billboard.findMany({
