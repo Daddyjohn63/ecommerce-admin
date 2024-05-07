@@ -65,6 +65,7 @@ export const BillboardFormForm: React.FC<BillboardFormProps> = ({ initialData })
       } else {
         await axios.post(`/api/${params.storeId}/billboards`, data);
       }
+      // console.log(data);
 
       router.refresh();
       router.push(`/${params.storeId}/billboards`);
@@ -141,7 +142,7 @@ export const BillboardFormForm: React.FC<BillboardFormProps> = ({ initialData })
                 <FormItem>
                   <FormLabel>Label</FormLabel>
                   <FormControl>
-                    <Input disabled={loading} placeholder="Billboard name" {...field} />
+                    <Input disabled={loading} placeholder="Billboard label" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

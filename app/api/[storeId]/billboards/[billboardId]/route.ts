@@ -5,11 +5,7 @@ import { auth } from '@clerk/nextjs';
 import prismadb from '@/lib/prismadb';
 // GET
 
-export async function GET(
-  req: Request,
-
-  { params }: { params: { billboardId: string } }
-) {
+export async function GET(req: Request, { params }: { params: { billboardId: string } }) {
   try {
     if (!params.billboardId) {
       return new NextResponse('Billboard id is required', { status: 400 });

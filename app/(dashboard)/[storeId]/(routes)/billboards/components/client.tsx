@@ -14,9 +14,8 @@ interface BillboardClientProps {
 }
 
 export const BillboardClient: React.FC<BillboardClientProps> = ({ data }) => {
-  const router = useRouter();
   const params = useParams();
-
+  const router = useRouter();
   return (
     <>
       <div className="flex items-center justify-between">

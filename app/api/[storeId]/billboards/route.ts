@@ -10,11 +10,11 @@ export async function POST(req: Request, { params }: { params: { storeId: string
     const { label, imageUrl } = body;
 
     if (!userId) {
-      return new NextResponse('Unauthenticated', { status: 401 });
+      return new NextResponse('Unauthenticated', { status: 403 });
     }
 
     if (!label) {
-      return new NextResponse('Name is required', { status: 400 });
+      return new NextResponse('Label is required', { status: 400 });
     }
 
     if (!imageUrl) {
@@ -33,7 +33,7 @@ export async function POST(req: Request, { params }: { params: { storeId: string
     });
 
     if (!storeByUserId) {
-      return new NextResponse('Unauthorised', { status: 403 });
+      return new NextResponse('Unauthorised', { status: 405 });
     }
 
     const billboard = await prismadb.billboard.create({
