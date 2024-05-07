@@ -1,10 +1,12 @@
-//export const dynamic = 'force-dynamic';
 import { format } from 'date-fns';
 import prismadb from '@/lib/prismadb';
 import { BillboardClient } from './components/client';
 import { BillboardColumn } from './components/columns';
 
-export const revalidate = 3;
+// Other imports remain the same
+import { GetServerSideProps } from 'next';
+
+export const revalidate = 1;
 
 const BillboardsPage = async ({ params }: { params: { storeId: string } }) => {
   const billboards = await prismadb.billboard.findMany({

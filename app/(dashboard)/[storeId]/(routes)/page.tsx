@@ -1,5 +1,5 @@
 import prismadb from '@/lib/prismadb';
-
+export const revalidate = 1;
 interface DashboardPageProps {
   params: { storeId: string };
 }
