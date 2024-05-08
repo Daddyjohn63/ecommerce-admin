@@ -22,6 +22,7 @@ import axios from 'axios';
 import { useParams, useRouter } from 'next/navigation';
 import { AlertModal } from '@/components/modals/alert-modal';
 import ImageUpload from '@/components/ui/image-upload';
+import { revalidateBillboards } from '@/lib/actions';
 
 const formSchema = z.object({
   label: z.string().min(1),
@@ -66,8 +67,9 @@ export const BillboardFormForm: React.FC<BillboardFormProps> = ({ initialData })
         await axios.post(`/api/${params.storeId}/billboards`, data);
       }
       // console.log(data);
+      revalidateBillboards();
+      // router.refresh();
 
-      router.refresh();
       router.push(`/${params.storeId}/billboards`);
       toast.success(toastMessage);
     } catch (error) {

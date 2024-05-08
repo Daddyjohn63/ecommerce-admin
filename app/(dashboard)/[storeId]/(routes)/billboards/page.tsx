@@ -2,13 +2,10 @@ import { format } from 'date-fns';
 import prismadb from '@/lib/prismadb';
 import { BillboardClient } from './components/client';
 import { BillboardColumn } from './components/columns';
-
-// Other imports remain the same
-import { GetServerSideProps } from 'next';
-
-export const revalidate = 1;
+import { revalidatePath } from 'next/cache';
 
 const BillboardsPage = async ({ params }: { params: { storeId: string } }) => {
+  //'use server';
   const billboards = await prismadb.billboard.findMany({
     where: {
       storeId: params.storeId
@@ -17,6 +14,8 @@ const BillboardsPage = async ({ params }: { params: { storeId: string } }) => {
       createdAt: 'desc'
     }
   });
+
+  // revalidatePath('/[storeId]/billboards', 'page');
 
   const formattedBillboards: BillboardColumn[] = billboards.map(item => ({
     id: item.id,
